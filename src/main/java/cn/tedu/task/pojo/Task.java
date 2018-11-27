@@ -1,8 +1,9 @@
 package cn.tedu.task.pojo;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Task {
+public class Task implements Serializable{
 	/*
 	 *   `task_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '任务id',
   `task_post_id` bigint(20) NOT NULL COMMENT '任务发布者id',
@@ -14,6 +15,7 @@ public class Task {
   `task_status` int(11) NOT NULL COMMENT '1:表示待完成，2：表示待接收，3：表示已拒绝，4：表示已完成',
 	 * 
 	 * */
+	//taskId=1&taskPostId=2&taskGetId=123456&taskContent=嘎嘎嘎嘎嘎&taskEndTime=2028-10-10
 	private String taskId;
 	private String taskPostId;
 	private String taskGetId;	
