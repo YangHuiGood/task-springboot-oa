@@ -20,9 +20,9 @@ public class Task implements Serializable{
 	private String taskPostId;
 	private String taskGetId;	
 	private String taskContent;
-	private Date taskCreateTime;
-	private Date taskEndTime;
-	private Date taskFinishTime;
+	private String taskCreateTime;
+	private String taskEndTime;
+	private String taskFinishTime;
 	private int taskStatus;
 	
 	public String getTaskId() {
@@ -49,22 +49,23 @@ public class Task implements Serializable{
 	public void setTaskContent(String taskContent) {
 		this.taskContent = taskContent;
 	}
-	public Date getTaskCreateTime() {
+	
+	public String getTaskCreateTime() {
 		return taskCreateTime;
 	}
-	public void setTaskCreateTime(Date taskCreateTime) {
+	public void setTaskCreateTime(String taskCreateTime) {
 		this.taskCreateTime = taskCreateTime;
 	}
-	public Date getTaskEndTime() {
+	public String getTaskEndTime() {
 		return taskEndTime;
 	}
-	public void setTaskEndTime(Date taskEndTime) {
+	public void setTaskEndTime(String taskEndTime) {
 		this.taskEndTime = taskEndTime;
 	}
-	public Date getTaskFinishTime() {
+	public String getTaskFinishTime() {
 		return taskFinishTime;
 	}
-	public void setTaskFinishTime(Date taskFinishTime) {
+	public void setTaskFinishTime(String taskFinishTime) {
 		this.taskFinishTime = taskFinishTime;
 	}
 	public int getTaskStatus() {

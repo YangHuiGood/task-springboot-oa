@@ -29,8 +29,9 @@ public class TaskController {
 			task = ObjectUtil.mapper.readValue(json_task,Task.class);
 			String taskId = ((UUIDUtil.getUUID()).substring(0,7));
 			task.setTaskId(taskId);
-			if(!(task.getTaskEndTime().before(new Date(System.currentTimeMillis())))){
-				task.setTaskCreateTime(new Date(System.currentTimeMillis()));
+			String taskCreateTime = new Date(System.currentTimeMillis())+"";
+			if(task.getTaskEndTime().compareTo(taskCreateTime)>=0){
+				task.setTaskCreateTime(taskCreateTime);
 			}else{
 				return "您发布任务的截止时间已经过了";
 			}
@@ -104,7 +105,7 @@ public class TaskController {
 		if(_task.getTaskStatus() != 1){
 			return 0;
 		}
-		int flag = taskService.submitTask(taskId,new Date(System.currentTimeMillis()));
+		int flag = taskService.submitTask(taskId,(new Date(System.currentTimeMillis())+""));
 		return flag;
 	}
 	

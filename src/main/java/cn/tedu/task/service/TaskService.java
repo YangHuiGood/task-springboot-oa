@@ -71,7 +71,7 @@ public class TaskService {
 		return flag;
 	}
 
-	public int submitTask(String taskId, Date taskFinishTime) {
+	public int submitTask(String taskId, String taskFinishTime) {
 		Task task = new Task();
 		task.setTaskId(taskId);
 		task.setTaskFinishTime(taskFinishTime);
