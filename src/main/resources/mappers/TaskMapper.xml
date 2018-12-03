@@ -10,13 +10,13 @@
 		select count(task_id) from t_task where task_status=#{taskStatus} and task_get_id = #{userId}     
 	</select>
 	<select id="queryPostTotal" resultType="java.lang.Integer">
-	    select count(task_id) from t_Task where task_post_id=#{userId}
+	    select count(task_id) from t_task where task_post_id=#{userId}
 	</select>
 	<select id="queryPostTasks" parameterType="string" resultType="Task">
-	    select * from t_task where task_post_id=#{userId} 
+	    select * from t_task where task_post_id=#{userId} order by task_create_time desc
 	</select>
 	<select id="queryMyTasks" parameterType="string" resultType="Task">
-	    select * from t_Task where task_get_id=#{userId} and task_status=#{taskStatus}
+	    select * from t_task where task_get_id=#{userId} and task_status=#{taskStatus} order by task_create_time desc
 	</select>
 	<update id="updateTask" parameterType="Task">
 	    update t_task <set>
@@ -28,7 +28,7 @@
 	    delete from t_task where task_id=#{taskId}
 	</delete>
 	<select id="queryTaskById" resultType="Task">
-	    select * from t_task where task_id=#{taskId}
+	    select * from t_task where task_id=#{taskId} 
 	</select>
 	<update id="updateTaskStatus">
 	    update t_task set task_status = #{taskStatus} where task_id=#{taskId}
@@ -39,5 +39,7 @@
 	<select id="queryUsers" parameterType="User" resultType="User">
 	     select * from t_user where father_id = #{userId}
 	</select>
-	
+	<select id="queryUserById" parameterType="User" resultType="User">
+		select * from t_user where user_id = #{userId}
+	</select>
 </mapper>

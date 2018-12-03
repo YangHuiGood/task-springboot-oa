@@ -24,7 +24,14 @@ public class Task implements Serializable{
 	private String taskEndTime;
 	private String taskFinishTime;
 	private int taskStatus;
+	private User user;
 	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public String getTaskId() {
 		return taskId;
 	}

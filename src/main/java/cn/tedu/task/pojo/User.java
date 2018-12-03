@@ -1,20 +1,17 @@
 package cn.tedu.task.pojo;
 
-public class User {
-	private String userId;
-	private String userName;
-	private String userPassword;
-	private String imgToken;
-	private String userEmail;
-	private String userPhone;
-	private Integer roleId;
-	private String fatherId;
-	public String getFatherId() {
-		return fatherId;
-	}
-	public void setFatherId(String fatherId) {
-		this.fatherId = fatherId;
-	}
+import java.io.Serializable;
+
+public class User implements Serializable{
+	private String userId;//用户id
+	private String userName;//用户名称
+	private String userPassword;//用户密码
+	private String imgToken;//人脸地址
+	private String userEmail;//用户邮箱
+	private String userPhone;//用户电话
+	private Integer roleId;//角色id
+	private String fatherId;//父级id
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -56,6 +53,18 @@ public class User {
 	}
 	public void setRoleId(Integer roleId) {
 		this.roleId = roleId;
+	}
+	public String getFatherId() {
+		return fatherId;
+	}
+	public void setFatherId(String fatherId) {
+		this.fatherId = fatherId;
+	}
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userName=" + userName + ", userPassword=" + userPassword + ", imgToken="
+				+ imgToken + ", userEmail=" + userEmail + ", userPhone=" + userPhone + ", roleId=" + roleId
+				+ ", fatherId=" + fatherId + "]";
 	}
 	
 	

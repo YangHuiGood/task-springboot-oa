@@ -31,4 +31,6 @@ public interface TaskMapper {
 
 	public List<User> queryUsers(User user);
 
+	public User queryUserById(User user);
+
 }
